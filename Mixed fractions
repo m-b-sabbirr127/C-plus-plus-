@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define pb push_back
+#define VLL vector<long long>
+#define VI vector<int>
+#define VS vector<string>
+#define sf scanf
+#define pf printf
+#define pi acos(-1)
+int main()
+{
+    int n,d,u,x;
+    cin>>n>>d;
+    x=n/d;
+    u=n-(d*x);
+    cout<<x<<" "<<u<<" "<<d<<endl;
+
+    return 0;
+}
+
