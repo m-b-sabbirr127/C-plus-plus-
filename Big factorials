@@ -1,0 +1,57 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define     __        ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+#define     pi        acos(-1)
+#define     ll        long long int
+#define     fopen     freopen("input.txt","r",stdin)
+#define     fwrite    freopen("output.txt","w",stdout)
+#define     f0(n)     for(int i=0;i<n;i++)
+#define     mem(a)    memset(a,0,sizeof(a))
+#define     mems(a)   memset(a,-1,sizeof(a))
+string factorial(string s,int n)
+{
+    string s1=s;
+   /* for(int i=1;i<=n;i++)
+    {*/
+        int z=s1.size(),rem=0,div=0;
+        string s2;
+        for(int j=z-1;j>=0;j--)
+        {
+
+            int v=(n*(s1[j]-48))+div;
+            rem=(v%10);
+            s2+=(rem+48);
+            div=v/10;
+        }
+        while(div)
+        {
+
+            s2+=((div%10)+'0');
+            div/=10;
+        }
+        reverse(s2.begin(),s2.end());
+      s1=s2;
+    //}
+    return s1;
+}
+int main()
+{
+    __
+    //fopen;
+    //fwrite;
+    string s[10001];
+    s[0]="1";
+    for(int i=1;i<=1000;i++){
+    s[i]=factorial(s[i-1],i);
+    }
+    int a,b;
+    cin>>a;
+    if(s[a].size()>4){
+    for(int i=s[a].size()-4;i<s[a].size();i++)
+    {
+        cout<<s[a][i];
+    }
+    }
+    else cout<<s[a];
+    return 0;
+}
